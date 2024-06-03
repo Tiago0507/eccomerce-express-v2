@@ -1,7 +1,11 @@
 @import url(variables.css);
 
 body {
-  background-color: var(--light-color);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('../../images/background-shop.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,12 +14,39 @@ body {
   margin: 0;
 }
 
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+  display: none;
+}
+.loading-spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .register-container {
   background-color: var(--white-color);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: 65%;
+  margin-top: 10px;
+  height: 70%;
   width: 300px;
   text-align: center;
   align-items: center;
@@ -43,7 +74,7 @@ body {
   color: #fff;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 .register-container button:hover {
@@ -114,7 +145,7 @@ svg {
 
 #footer {
   width: 100%;
-  background-color: var(--light-gray-color);
+  background-color: var(--white-color);
   margin-top: 5%;
   height: 15%;
 }
@@ -122,15 +153,29 @@ svg {
 .footer-container {
   height: 100%;
   width: 100%;
-}
-
-.social-links {
-  height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.shipping {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 70px;
+}
+
+.payment-method {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 70px;
+}
+
+.visa, .mastercard, .paypal {
+  padding-right: 15px;
+}
+
 
 ul {
   display: flex;
@@ -141,25 +186,7 @@ h2 {
   color: var(--gray-color-800);
 }
 
-.facebook:hover {
-  color: var(--gray-color-800);
-}
 
-.instagram:hover {
-  color: var(--gray-color-800);
-}
-
-.twitter:hover {
-  color: var(--gray-color-800);
-}
-
-.linkedin:hover {
-  color: var(--gray-color-800);
-}
-
-.youtube:hover {
-  color: var(--gray-color-800);
-}
 
 
 

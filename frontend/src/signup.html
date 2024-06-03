@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/frontend/images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="templates_Style/signUpStyle.css">
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="auth_style/signup_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap"
@@ -12,6 +12,9 @@
     <title>Sign up</title>
 </head>
 <body>
+  <div class="loading-container" id="loadingSpinner">
+    <div class="loading-spinner"></div>
+  </div>
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
       <title>Search</title>
@@ -68,26 +71,6 @@
     <symbol xmlns="http://www.w3.org/2000/svg" id="quote" viewBox="0 0 24 24">
       <path fill="currentColor" d="m15 17l2-4h-4V6h7v7l-2 4h-3Zm-9 0l2-4H4V6h7v7l-2 4H6Z" />
     </symbol>
-    <symbol xmlns="http://www.w3.org/2000/svg" id="facebook" viewBox="0 0 24 24">
-      <path fill="currentColor"
-        d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z" />
-    </symbol>
-    <symbol xmlns="http://www.w3.org/2000/svg" id="youtube" viewBox="0 0 32 32">
-      <path fill="currentColor"
-        d="M29.41 9.26a3.5 3.5 0 0 0-2.47-2.47C24.76 6.2 16 6.2 16 6.2s-8.76 0-10.94.59a3.5 3.5 0 0 0-2.47 2.47A36.13 36.13 0 0 0 2 16a36.13 36.13 0 0 0 .59 6.74a3.5 3.5 0 0 0 2.47 2.47c2.18.59 10.94.59 10.94.59s8.76 0 10.94-.59a3.5 3.5 0 0 0 2.47-2.47A36.13 36.13 0 0 0 30 16a36.13 36.13 0 0 0-.59-6.74ZM13.2 20.2v-8.4l7.27 4.2Z" />
-    </symbol>
-    <symbol xmlns="http://www.w3.org/2000/svg" id="twitter" viewBox="0 0 256 256">
-      <path fill="currentColor"
-        d="m245.66 77.66l-29.9 29.9C209.72 177.58 150.67 232 80 232c-14.52 0-26.49-2.3-35.58-6.84c-7.33-3.67-10.33-7.6-11.08-8.72a8 8 0 0 1 3.85-11.93c.26-.1 24.24-9.31 39.47-26.84a110.93 110.93 0 0 1-21.88-24.2c-12.4-18.41-26.28-50.39-22-98.18a8 8 0 0 1 13.65-4.92c.35.35 33.28 33.1 73.54 43.72V88a47.87 47.87 0 0 1 14.36-34.3A46.87 46.87 0 0 1 168.1 40a48.66 48.66 0 0 1 41.47 24H240a8 8 0 0 1 5.66 13.66Z" />
-    </symbol>
-    <symbol xmlns="http://www.w3.org/2000/svg" id="instagram" viewBox="0 0 256 256">
-      <path fill="currentColor"
-        d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48Zm0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32Zm48-136H80a56.06 56.06 0 0 0-56 56v96a56.06 56.06 0 0 0 56 56h96a56.06 56.06 0 0 0 56-56V80a56.06 56.06 0 0 0-56-56Zm40 152a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40V80a40 40 0 0 1 40-40h96a40 40 0 0 1 40 40ZM192 76a12 12 0 1 1-12-12a12 12 0 0 1 12 12Z" />
-    </symbol>
-    <symbol xmlns="http://www.w3.org/2000/svg" id="linkedin" viewBox="0 0 24 24">
-      <path fill="currentColor"
-        d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
-    </symbol>
     <symbol xmlns="http://www.w3.org/2000/svg" id="nav-icon" viewBox="0 0 16 16">
       <path
         d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z" />
@@ -103,7 +86,7 @@
   </svg>
     <div class="register-container">
         <div>
-          <img src="/frontend/images/main-logo.png" class="logo">
+          <img src="../images/main-logo.png" class="logo">
         </div>
         <h2>Registro de usuarios</h2>
         <p>¡Bienvenido!<br>Ingrese las credenciales para registrarse.</p>
@@ -117,7 +100,7 @@
                         d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                     </svg>
                   </div>
-                  <input type="text" id="username-input" class="username-input" name="username" placeholder="Nombre de usuario" required>
+                  <input type="text" id="username" class="username" name="username" placeholder="Nombre de usuario" required>
                 </div>
                 <div class="password-container">
                   <div class="username-icon">
@@ -127,55 +110,40 @@
                         d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
                     </svg>
                   </div>
-                  <input type="password" id="password-input" class="password-input" name="password" placeholder="Contraseña" required>
+                  <input type="password" id="password" class="password" name="password" placeholder="Contraseña" required>
                 </div>
             </div>
-            <button id="register-button" class="register-button" type="submit">Registrarse</button>
+            <button id="registerButton" class="registerButton" type="button">Registrarse</button>
+            <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
         </form>
     </div>
-    <footer id="footer" class="overflow-hidden ">
+    <footer id="footer" class="overflow-hidden">
       <div class="footer-container">
-        <div class="social-links">
-          <ul class="">
-            <li>
-              <a href="#">
-                <svg class="facebook">
-                  <use xlink:href="#facebook" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <svg class="instagram">
-                  <use xlink:href="#instagram" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <svg class="twitter">
-                  <use xlink:href="#twitter" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <svg class="linkedin">
-                  <use xlink:href="#linkedin" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <svg class="youtube">
-                  <use xlink:href="#youtube" />
-                </svg>
-              </a>
-            </li>
-          </ul>
+        <div class="shipping">
+          <p>Enviamos con:</p>
+          <img src="../images/dhl.png" alt="dhl" width="60" height="24">
+          <img src="../images/servientrega.png" alt="servientrega" width="40" height="30">
+        </div>
+        <div class="payment-method">
+          <p>Opciones de pago:</p>
+          <img class="visa" src="../images/visa.jpg" alt="visa">
+          <img class="mastercard" src="../images/mastercard.jpg" alt="mastercard">
+          <img class="paypal" src="../images/paypal.jpg" alt="paypal">
+        </div>
+        <div class="copyright">
+          <p>© Copyright 2024 DeepStore.</a>
+          </p>
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="/frontend/js/signup.js"></script>
+    <script type="text/javascript" src="../js/signup/script.js"></script>
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../js/plugins.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 </body>
 </html>
