@@ -12,7 +12,6 @@ document.getElementById('registerButton').addEventListener('click', async () => 
     loadingSpinner.style.display = 'flex';
 
     try {
-        console.log('hijueputa llegó hasta aquí...')
         const response = await fetch('http://localhost:3000/register', {
             method: 'POST',
             headers: {
@@ -34,7 +33,6 @@ document.getElementById('registerButton').addEventListener('click', async () => 
         }
     } catch (error) {
         // Hide loading spinner
-        console.log('Qué gonorrea, no funciona esta mierdaaa')
         loadingSpinner.style.display = 'none';
         console.error('Error:', error);
         alert('An error occurred. Please try again later.');
